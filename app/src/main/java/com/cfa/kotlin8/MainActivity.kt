@@ -5,6 +5,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.cfa.kotlin8.functions.filtreNombre
+import com.cfa.kotlin8.functions.positive
+import java.util.Arrays
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +21,27 @@ class MainActivity : AppCompatActivity() {
 
         }
         println("donner un message en console")
+        //println("donner un message en console")
+
+        for (i in 1..10) {
+            println("répétition $i")
+        }
+
+        //var prenom : String? = null
+        //println(prenom?.length) // verifier que prenom soit null
+        //println(prenom!!.length) //verifier que prenom ne soit jamais null
 
 
+        val listeNombres = arrayOf(-99,-45,-60,0,6,58,69)
+        val listeNombresFiltre = filtreNombre(listeNombres, ::positive )
+
+        println("Liste des nombres : ${Arrays.toString(listeNombres)}")
+        println("Liste des nombres positives : ${Arrays.toString(listeNombresFiltre)}")
+
+        val filterPositiv = listeNombres.filter { nbre -> nbre > 0 }
+        val filterEv = listeNombres.filter { nbre -> nbre % 2 == 0 }
+        val filterEv2 = listeNombres.filter { it % 2 == 0 }
+
+        println("Liste des nombres modulo 2 : ${Arrays.toString(filterEv.toTypedArray())}")
     }
 }
