@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.cfa.kotlin8.functions.filtreNombre
 import com.cfa.kotlin8.functions.positive
+import com.cfa.kotlin8.poo.Persone
 import java.util.Arrays
 
 class MainActivity : AppCompatActivity() {
@@ -43,5 +44,12 @@ class MainActivity : AppCompatActivity() {
         val filterEv2 = listeNombres.filter { it % 2 == 0 }
 
         println("Liste des nombres modulo 2 : ${Arrays.toString(filterEv.toTypedArray())}")
+
+        val persone1 = Persone("Dupont", "Jean", 20, 1.80F)
+        val persone2 = Persone("Martin", "Luc", 16, 1.80F)
+
+        val p2 = Persone("Jordan", "Michael", 27, 1.64F)
+
+        println("${p2.prenom} peut jouer au basket : ${p2.peuJouerAuBasket}")
     }
 }
