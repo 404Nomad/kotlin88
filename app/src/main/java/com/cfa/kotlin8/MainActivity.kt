@@ -8,6 +8,10 @@ import androidx.core.view.WindowInsetsCompat
 import com.cfa.kotlin8.functions.filtreNombre
 import com.cfa.kotlin8.functions.positive
 import com.cfa.kotlin8.poo.Persone
+import com.cfa.kotlin8.poo.Vehicule
+import com.cfa.kotlin8.poo.Voiture
+import com.cfa.kotlin8.poo.Moto
+import com.cfa.kotlin8.poo.*
 import java.util.Arrays
 
 class MainActivity : AppCompatActivity() {
@@ -53,5 +57,21 @@ class MainActivity : AppCompatActivity() {
         println("${p2.prenom} peut jouer au basket : ${p2.peuJouerAuBasket}")
 
         val p3 = Persone("Jordan", "Peterson")
+
+        val v1 = Voiture()
+        v1.moteur = "Electrique"
+        println("c'est une voiture ${v1.nombreDeRoue()}")
+
+        val v2 = Moto()
+        println("c'est une moto ${v2.nombreDeRoue()}")
+
+        val v3 = Moto(sideCar = true)
+        println("C'est une moto ${v3.nombreDeRoue()}")
+
+        val Animal = Dog()
+        Animal.feeding()
+
+        println("")
+
     }
 }
