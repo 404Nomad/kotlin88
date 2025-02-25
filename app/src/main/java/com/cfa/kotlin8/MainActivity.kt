@@ -47,6 +47,12 @@ class MainActivity : AppCompatActivity() {
         val filterEv = listeNombres.filter { nbre -> nbre % 2 == 0 }
         val filterEv2 = listeNombres.filter { it % 2 == 0 }
 
+        listeNombres.forEach { println(it) }
+        listeNombres.forEachIndexed{ind, nbr -> println(" $ind => $nbr") }
+        listeNombres.forEachIndexed{_, nbr -> println(" $nbr") }
+        // parcourir tableau et recuperer que les indexs
+        listeNombres.forEachIndexed{ind, _-> println(" $ind") }
+
         println("Liste des nombres modulo 2 : ${Arrays.toString(filterEv.toTypedArray())}")
 
         val persone1 = Persone("Dupont", "Jean", 20, 1.80F)
@@ -99,5 +105,36 @@ class MainActivity : AppCompatActivity() {
         } catch (e: Exception) {
             println(e.message)
         }
+
+        // tableau avec entiers et tableau avec prénom , pour les parcourir on peut
+        // faire un for each, ou utiliser une fonction parcourir les deux tableaux.
+        // ici on a donc deux tableau typé différement
+
+
+        //val tab1 = arrayOf(1,2,3,4,5,6,7,8,9,10)
+        val tab3 = arrayOf<Int>(1,2,3,4,5,6,7,8,9,10)
+        //val tab2 = arrayOf("Jean", "Luc", "Martin", "Dupont")
+        val tab4 = arrayOf<String>("Jean", "Luc", "Martin", "Dupont")
+
+        // function pour afficher les elements du tableau peut importe son Type
+        // pour cela on utilise
+        // fonction affichage
+        // <T> permet de signaler que la fonction est generique
+        fun <T> affiche(tableau: Array<T>) {
+            var sb = StringBuilder()
+            var separator = ""
+            for (el in tableau) {
+                sb.append(separator)
+                sb.append(el)
+                separator = ", "
+            }
+            println(sb.toString());
+        }
+
+        affiche(tab3)
+        affiche(tab4)
+
+        println("le vent va vers ${Direction.NORD.action()}")
+        println("Le vent va vers ${Direction.NORD.description} et ${Direction.NORD.action()}")
     }
 }
