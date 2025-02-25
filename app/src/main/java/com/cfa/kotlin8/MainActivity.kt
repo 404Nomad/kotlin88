@@ -70,8 +70,34 @@ class MainActivity : AppCompatActivity() {
 
         val Animal = Dog()
         Animal.feeding()
-
+        Animal.nbrDePattes(4)
+        Animal.courir()
+        Animal.communication()
         println("")
 
+        println("Le régime des chiens est souvent : ${Dog.REGIME_ALIMENTAIRE}")
+
+        val el1 = Eleve("Dupont", "Jean", 12.5)
+        val el2 = Eleve("Martin", "Luc", 9.5)
+        val el3= Eleve("Martin", "Luc", 9.5)
+
+        println(el1.equals(el2))
+        println(el3.equals(el2))
+
+        println(Animal is Dog == true)
+
+        var test = Animal !is Dog
+        println(test)
+
+        // smart cast -
+        // safe cast -
+        // unsafe cast - permet de lever une exception
+
+        //
+        try {
+            var camion:Vehicule = v2 as Vehicule
+        } catch (e: Exception) {
+            println(e.message)
+        }
     }
 }
