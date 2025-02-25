@@ -5,7 +5,7 @@ public class Persone(val nom:String, val prenom:String, val age:Int, val high:Fl
 
     // definir propriétées interne a l'objet
     // peut jouer au basket si age superieur a 50 ans et hauteur superieur a 1.5 ( F = Float )
-    val peuJouerAuBasket = age > 50 && high > 1.5F
+    val peuJouerAuBasket = age > 18 && high > 1.5F
 
 
     fun estMajeur(age: Int):Boolean = age > 18
@@ -16,5 +16,9 @@ public class Persone(val nom:String, val prenom:String, val age:Int, val high:Fl
             true -> "peu jouer au basket"
             false -> "peu pas jouer au basket, domage!"
         }
+        println("Info joueur: $nom $prenom $basketString")
     }
+
+    // surcharge de constructeur
+    constructor(nom:String, prenom:String) : this(nom,prenom,18,1.6F)
 }

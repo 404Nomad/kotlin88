@@ -51,5 +51,7 @@ class MainActivity : AppCompatActivity() {
         val p2 = Persone("Jordan", "Michael", 27, 1.64F)
 
         println("${p2.prenom} peut jouer au basket : ${p2.peuJouerAuBasket}")
+
+        val p3 = Persone("Jordan", "Peterson")
     }
 }
